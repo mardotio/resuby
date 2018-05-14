@@ -1,5 +1,8 @@
 # Resuby
----
+
+[![Gem](https://img.shields.io/gem/v/resuby.svg?style=flat-square)](https://rubygems.org/gems/resuby)
+[![GitHub issues](https://img.shields.io/github/issues/mardotio/resuby.svg?style=flat-square)](https://github.com/mardotio/resuby/issues)
+[![Gem](https://img.shields.io/gem/dtv/resuby.svg?style=flat-square)](https://rubygems.org/gems/resuby)
 
 ## Overview
 
@@ -9,7 +12,21 @@ next job. After you generate your resume, you will have an HTML file that you
 can open in your favorite browser (as long as yor favorite browser is Chrome or
 Safari), and view the end result.
 
-# Installation
+## Table of Contents
+
+<!-- TOC -->
+
+- [Resuby](#resuby)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Generating Resume](#generating-resume)
+  - [Compatibility](#compatibility)
+
+<!-- /TOC -->
+
+## Installation
 
 To install, simply run `gem install resuby`.
 
@@ -40,6 +57,8 @@ Below are the expected key values for each array element under your headers.
 |`desc`|String|True|Description for that section (i.e. dates), will be displayed to the left of that section|
 |`subtitle`|String|False|Will be displayed right under the title, will be in italics|
 |`data`|Array|True|Any other info, such as accomplishments,  each array element will be a new bullet|
+
+[`default.yaml`](/examples/default.yaml) contains a sample structure.
 
 ## Generating Resume
 

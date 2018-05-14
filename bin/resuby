@@ -2,9 +2,16 @@
 
 require 'resuby'
 
-new_resume = Resuby.new
-resume_data = File.join(Dir.pwd, 'resume.yaml')
-resume = File.join(Dir.pwd, 'resume.html')
-new_resume.read_source(resume_data)
-new_resume.save_resume(resume)
-new_resume.compile_styles
+options = ARGV
+
+if options.first == 'generate'
+  new_resume = Resuby.new
+  resume_data = File.join(Dir.pwd, 'resume.yaml')
+  resume = File.join(Dir.pwd, 'resume.html')
+  new_resume.read_source(resume_data)
+  new_resume.save_resume(resume)
+  new_resume.compile_styles
+else
+  puts 'Specify an action to create your resume'
+  exit 1
+end

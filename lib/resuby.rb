@@ -38,7 +38,7 @@ class Resuby
 
     scss_file = File.join(File.dirname(__FILE__), 'resuby/css/main.scss')
     render = Sass::Engine.new(File.read(scss_file), options).render
-    Dir.mkdir(File.join(Dir.pwd, 'css'), 0755)
+    Dir.mkdir(File.join(Dir.pwd, 'css'), 0755) unless File.directory?(File.join(Dir.pwd, 'css'))
     File.write(File.join(Dir.pwd, 'css/main.css'), render)
   end
 end

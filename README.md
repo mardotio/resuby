@@ -62,21 +62,21 @@ Below are the expected key values for each array element under your headers.
 
 ## Generating Resume
 
-Once you have created the `resume.yaml` file at the root of the project, you can
-run the following command from the root of the project:
+Once you have created a `resume.yaml` file, you can run the following command
+from the same directoy:
 
 ```
 resuby generate
 ```
 
-Running this command will generate a file called `resume.html` at the root of
-the project. Now you can simply open this in a browser, and print it (__make
-sure than the printed page has no margins, as the HTML generated will have its
+Running this command will generate a file called `resume.html` in your current
+directory. Now you can simply open this in a browser, and print it (__make sure
+that the printed page has no margins, as the HTML generated will have its
 own margins set__).
 
 
 ## Compatibility
 
 The generated HTML and styling has only been tested in Chrome and Safari.
-Doesn't mean it won't work on other browser, but it is not guaranteed to work
-as expected on other browsers.
+This doesn't mean it won't work on other browsers, but it is not guaranteed to
+look as designed.

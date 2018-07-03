@@ -12,45 +12,46 @@
     <div class="header">
       <h1 class="name"><%=@name%></h1>
       <ul>
-        <% for @info in @contact_info %>
+        <%- for @info in @contact_info -%>
         <li class="contact-info"><%=@info%></li>
-        <% end %>
+        <%- end -%>
       </ul>
     </div>
 
     <div>
-      <% if @profile %>
+      <%- if @profile -%>
       <h2 class="section-header">Profile</h2>
       <span class="hr"></span>
       <p class="section-profile">
         <%=@profile%>
       </p>
-      <% end %>
+      <%- end -%>
 
-      <% for @section in @sections.keys %> 
+      <%- for @section in @sections.keys -%>
       <h2 class="section-header"><%=@section.split('_').map { |word| word.capitalize }.join(' ')%></h2>
       <span class="hr"></span>
-      <% for @row in @sections[@section] %>
+      <%- for @row in @sections[@section] -%>
       <div class="section-row">
         <div class="section-desc">
           <%=@row['desc']%>
         </div>
         <div class="section-info">
           <ul>
-            <% if @row['title'] %>
+            <%- if @row['title'] -%>
             <li class="info-title"><%=@row['title']%></li>
-            <% end %>
-            <% if @row['subtitle'] %>
+            <%- end -%>
+            <%- if @row['subtitle'] -%>
             <li class="info-subtitle"><%=@row['subtitle']%></li>
-            <% end %>
-            <% for @data in @row['data'] %>
+            <%- end -%>
+            <%- for @data in @row['data'] -%>
             <li><%=@data%></li>
-            <% end %>
+            <%- end -%>
           </ul>
         </div>
       </div>
-      <% end %>
-      <% end %>
+
+      <%- end -%>
+      <%- end -%>
     </div>
   </body>
 </html>

@@ -19,7 +19,7 @@ class Resuby
   end
 
   def render
-    ERB.new(self.template).result( binding )
+    ERB.new(self.template, nil, '-').result( binding )
   end
 
   def save_resume(file)

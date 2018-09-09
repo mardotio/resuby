@@ -1,3 +1,3 @@
-class Resuby
+module Resuby
   VERSION = '0.0.2'.freeze
 end

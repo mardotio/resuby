@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.license          = 'MIT'
 
   s.add_dependency('sass', ['>= 3.5.0', '< 4.0.0'])
+  s.add_dependency('optimist', ['>= 3.0.0', '< 4.0.0'])
 end

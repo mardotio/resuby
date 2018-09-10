@@ -13,6 +13,10 @@ Add features to `resuby` executable
 - Converted Resuby into a module
 - `Resuby::Resume` class
 - `Resuby::CLI` module
+- Support for JSON resume data files
+
+#### Removed
+- `Resuby` class
 
 #### Fixed
 - Trailing whitelines in generated HTML file

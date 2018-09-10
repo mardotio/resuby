@@ -27,9 +27,12 @@ module Resuby::CLI
     when 'generate'
       @opts = Optimist::options do
         banner Resuby::CLI::GENERATE_BANNER
-        opt :output, 'Output file for generated HTML', default: File.join(Dir.pwd, 'resume.html')
         opt :data, 'Path to file containing data for the resume', default: File.join(Dir.pwd, 'resume.yaml')
+        opt :json, 'Read in data file as a JSON formatted file'
+        opt :output, 'Output file for generated HTML', default: File.join(Dir.pwd, 'resume.html')
+        opt :yaml, 'Read in data file as a YAML formatted file'
       end
+      Optimist::die 'Data file connot be JSON and YAML' if @opts[:json] && @opts[:yaml]
     else
       Optimist::die "Unknonwn subcommand #{@subcommand.inspect}"
     end

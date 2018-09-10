@@ -1,4 +1,5 @@
 require 'erb'
+require 'json'
 require 'yaml'
 require 'sass'
 require 'resuby/version'
@@ -10,13 +11,27 @@ class Resuby::Resume
     @template = File.read(File.join(__dir__, '../templates/resume.erb'))
   end
 
-  def read_source(source)
+  def read_source(source, extension = nil)
     puts "Reading in data from #{source}"
-    resume_data = YAML.load_file(source)
-    @name = resume_data['name']
-    @contact_info = resume_data['contact']
-    @profile = resume_data['profile']
-    @sections = resume_data.reject { |key, value| ['name', 'contact', 'profile'].include?(key) }
+    ext = extension || File.extname(source)
+    resume_data =
+    case ext
+    when '.yaml', '.yml'
+      YAML.load_file(source)
+    when '.json'
+      JSON.parse(File.read(source))
+    else
+      puts 'File type not supported'
+      exit 1
+    end
+    store_data(resume_data)
+  end
+
+  def store_data(data)
+    @name = data['name']
+    @contact_info = data['contact']
+    @profile = data['profile']
+    @sections = data.reject { |key, value| ['name', 'contact', 'profile'].include?(key) }
   end
 
   def render

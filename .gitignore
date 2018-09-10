@@ -8,7 +8,21 @@
 # Generated files and resume data
 *.html
 *.y*ml
+*.json
 
-# Exceptions for examples
+# OS Files
+.DS_Store
+
+# Dev Tools
+.vscode
+.idea
+*.swp
+
+#
+# Exceptions
+#
+
+# Examples
 !examples/*.html
 !examples/*.yaml
+!examples/*.json

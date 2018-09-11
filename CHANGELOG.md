@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file. The format is based on [Keep a
 Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## Release 0.1.0
+## Release 0.1.0 - 2018-09-10
 ### Summary
 
 Add features to `resuby` executable
@@ -21,7 +21,7 @@ Add features to `resuby` executable
 #### Fixed
 - Trailing whitelines in generated HTML file
 
-## Release 0.0.1
+## Release 0.0.1 - 2018-05-13
 ### Summary
 
 Initial release of the project

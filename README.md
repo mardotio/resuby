@@ -26,6 +26,7 @@ again (although you could certainly save that too).
   - [Usage](#usage)
     - [CLI](#cli)
       - [Generating Resume](#generating-resume)
+      - [Generating Resume Data Template](#generating-resume-data-template)
   - [Compatibility](#compatibility)
 
 <!-- /TOC -->
@@ -77,8 +78,20 @@ Running this command will generate a file called `resume.html`, and a `css/` dir
 you can simply open this in a browser, and print it (__make sure that the printed page has no margins, as the HTML
 generated will have its own margins set__).
 
-You can run `resuby generate --help` to get additional information about the executable.
+#### Generating Resume Data Template
 
+Think converting your resume to `YAML` or `JSON` will take too long? Well, the `resuby` CLI can help take some of that
+burden off of your shoulders by generating a data template. Once you have the template, simply fill in the file with
+your information, and you should be ready to go. To create a template just do:
+
+```
+resuby generate -o <path/to/template> -y
+```
+
+This will generate the template in `YAML` format, however, you can make it output `JSON` just as easily if that's more
+your style.
+
+You can run `resuby generate --help` to get additional information about the executable.
 
 ## Compatibility
 

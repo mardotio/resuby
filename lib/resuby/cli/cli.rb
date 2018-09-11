@@ -18,7 +18,7 @@ module Resuby::CLI
     @global_opts = Optimist::options do
       banner Resuby::CLI::RESUBY_BANNER
       version "resuby version #{Resuby::VERSION}"
-      stop_on %w(generate)
+      stop_on %w(generate init)
     end
   end
 
@@ -33,6 +33,15 @@ module Resuby::CLI
         opt :yaml, 'Read in data file as a YAML formatted file'
       end
       Optimist::die 'Data file connot be JSON and YAML' if @opts[:json] && @opts[:yaml]
+    when 'init'
+      @opts = Optimist::options do
+        banner Resuby::CLI::INIT_BANNER
+        opt :force, 'Force overwrite of data file if already present'
+        opt :json, 'Outputs data template in JSON format'
+        opt :output, 'Path to file where data template should be placed', required: true, type: :string
+        opt :yaml, 'Outputs data template in YAML format'
+      end
+      Optimist::die 'Cannot output two different formats at the same time' if @opts[:json] && @opts[:yaml]
     else
       Optimist::die "Unknonwn subcommand #{@subcommand.inspect}"
     end
@@ -42,6 +51,8 @@ module Resuby::CLI
     case @subcommand
     when 'generate'
       Resuby::CLI.generate
+    when 'init'
+      Resuby::CLI.init
     else
       Optimist::die "Unknonwn subcommand #{@subcommand.inspect}"
     end

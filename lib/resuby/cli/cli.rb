@@ -42,6 +42,7 @@ module Resuby::CLI
         opt :yaml, 'Outputs data template in YAML format'
       end
       Optimist::die 'Cannot output two different formats at the same time' if @opts[:json] && @opts[:yaml]
+      Optimist::die 'You must specify an output format' unless @opts[:json] || @opts[:yaml]
     else
       Optimist::die "Unknonwn subcommand #{@subcommand.inspect}"
     end

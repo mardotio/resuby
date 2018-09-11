@@ -6,6 +6,7 @@ Usage: resuby <options> [command] [<args>]
 
 Commands:
 generate      Generate an HTML resume
+init          Initialize project by creating a resume data template
 
 Options:
   EOT
